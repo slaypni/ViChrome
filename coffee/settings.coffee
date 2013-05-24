@@ -10,36 +10,37 @@ mapping =
 
 g.SettingManager =
     defaultSettings :
-        "scrollPixelCount"        : 40
-        "defaultNewTab"           : "home"
-        "commandWaitTimeOut"      : 2000
-        "fModeAvailableKeys"      : "fdsaghjklwertyuiovbcnm"
-        "fModeIgnoreCase"         : false
-        "disableAutoFocus"        : false
-        "smoothScroll"            : false
-        "enableCompletion"        : true
-        "searchEngine"            : "www.google.com"
-        "wrapSearch"              : true
-        "incSearch"               : true
-        "ignoreCase"              : true
-        "useMigemo"               : false
-        "minMigemoLength"         : 3
-        "minIncSearch"            : 2
-        "ignoredUrls"             : [
+        "scrollPixelCount"                : 40
+        "defaultNewTab"                   : "home"
+        "commandWaitTimeOut"              : 2000
+        "fModeAvailableKeys"              : "fdsaghjklwertyuiovbcnm"
+        "fModeIgnoreCase"                 : false
+        "disableAutoFocus"                : false
+        "smoothScroll"                    : false
+        "enableCompletion"                : true
+        "searchEngine"                    : "www.google.com"
+        "wrapSearch"                      : true
+        "incSearch"                       : true
+        "ignoreCase"                      : true
+        "useMigemo"                       : false
+        "minMigemoLength"                 : 3
+        "minIncSearch"                    : 2
+        "ignoredUrls"                     : [
             "http*://mail.google.com/*"
             "http*://www.google.co*/reader/*"
             "http*://docs.google.com/*"
             "http*://www.google.com/calendar/*"
         ]
-        "commandBoxAlign"         : "Left-Bottom"
-        "commandBoxWidth"         : 350
-        "hintFontSize"            : 10
-        "hintBackgroundColor"     : "rgba(255, 255, 80, 0.7)"
-        "hintColor"               : "#007"
-        "hintColorSelected"       : "#DD4848"
-        "useFModeAnimation"       : true
-        "notifyUpdateSucceeded"   : true
-        "keyMappingAndAliases"    : "### Sample Settings\n
+        "commandBoxAlign"                 : "Left-Bottom"
+        "commandBoxWidth"                 : 350
+        "doShowCommandBoxOnEmergencyMode" : true
+        "hintFontSize"                    : 10
+        "hintBackgroundColor"             : "rgba(255, 255, 80, 0.7)"
+        "hintColor"                       : "#007"
+        "hintColorSelected"               : "#DD4848"
+        "useFModeAnimation"               : true
+        "notifyUpdateSucceeded"           : true
+        "keyMappingAndAliases"            : "### Sample Settings\n
 \n
 # aliases\n
 # in this example you can open extensions page by the command ':ext'\n

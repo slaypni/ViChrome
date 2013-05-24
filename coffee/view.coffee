@@ -68,7 +68,7 @@ class g.Surface
                       .addClass( 'vichrome-statuslineinactive' )
                       .addClass( "vichrome-statusline" + align )
                       .width( g.model.getSetting "commandBoxWidth" )
-        @statusLineVisible = false
+        @statusLineActivated = false
 
         if top?
             path = chrome.extension.getURL("commandbox.html");
@@ -88,16 +88,19 @@ class g.Surface
             $('html').append(w)
         this
 
-    activateStatusLine : ->
+    activateStatusLine : (isVisible = true) ->
         if @slTimeout
             clearTimeout( @slTimeout )
             @slTimeout = undefined
 
-        if @statusLineVisible then return
-        @statusLine.removeClass( 'vichrome-statuslineinactive' )
-        @attach( @statusLine )
-        @statusLine.show()
-        @statusLineVisible = true
+        if not @statusLineActivated
+            @statusLine.removeClass( 'vichrome-statuslineinactive' )
+            @attach( @statusLine )
+        if isVisible
+            @statusLine.show()
+        else
+            @statusLine.hide()
+        @statusLineActivated = true
 
         this
 
@@ -116,14 +119,13 @@ class g.Surface
         if @slTimeout?
             clearTimeout( @slTimeout )
             @slTimeout = undefined
-        if not @statusLineVisible then return
-
-        @statusLine.html("").hide()
-        @statusLine.detach()
-        @statusLineVisible = false
+            
+        @statusLine?.detach()
+        @statusLineActivated = false
+        
         this
 
-    setStatusLineText : (text, timeout) ->
+    setStatusLineText : (text, timeout, isVisible = true) ->
         unless top?
             chrome.extension.sendRequest( {
                 command      : "TopFrame"
@@ -133,7 +135,7 @@ class g.Surface
             })
             return
 
-        @activateStatusLine()
+        @activateStatusLine(isVisible)
         @statusLine.html( text )
 
         if timeout

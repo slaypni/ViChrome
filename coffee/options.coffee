@@ -109,6 +109,7 @@ onSettings = (msg) ->
     initCheckBox    "fModeIgnoreCase"
     initCheckBox    "notifyUpdateSucceeded"
     initCheckBox    "useFModeAnimation"
+    initCheckBox    "doShowCommandBoxOnEmergencyMode"
     initDropDown    "commandBoxAlign"
     initDropDown    "searchEngine"
 

@@ -320,7 +320,7 @@ class g.EmergencyMode extends g.Mode
                .replace( />/g, "&gt;" )
                .replace( /, $/, " " )
         text += "to escape"
-        g.view.setStatusLineText( text )
+        g.view.setStatusLineText( text, undefined, g.model.getSetting("doShowCommandBoxOnEmergencyMode") )
 
     exit  : -> g.view.hideStatusLine()
 
